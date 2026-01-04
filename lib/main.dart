@@ -1,113 +1,45 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(FlutterApp());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+class FlutterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(colorScheme: .fromSeed(seedColor: Colors.deepPurple)),
-      home: const MyHomePage(title: 'Flutter App'),
+      title: "Flutter App",
+      theme: ThemeData(primarySwatch: Colors.blue),
+      home: DashBoardScreen(),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class DashBoardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var arrNames = ['Ram', 'Sita', 'Hari', 'Gita', 'Sima', 'Saloni'];
     return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
+      appBar: AppBar(title: Text("DashBoard")),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        color: const Color.fromARGB(255, 130, 160, 173),
+        child: Center(
+          child: Container(
+            width: 100,
+            height: 100,
 
-      // body: Center(
-      //   child: InkWell(
-      //     onTap: () {
-      //       print("Tapped on Container");
-      //     },
-      //     child: Container(
-      //       width: 200,
-      //       height: 200,
-      //       color: Colors.amber,
-      //       child: Center(
-      //         child: InkWell(
-      //           onTap: () {
-      //             print("Text Wight Tapped");
-      //           },
-      //           child: Text(
-      //             "Click here",
-      //             style: TextStyle(fontSize: 21, fontWeight: FontWeight.w700),
-      //           ),
-      //         ),
-      //       ),
-      //     ),
-      //   ),
-      // ),
-      body: ListView.separated(
-        itemBuilder: (context, index) {
-          return Row(
-            children: [
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Column(
-                  children: [
-                    Text(
-                      arrNames[index],
-                      style: TextStyle(
-                        fontSize: 21,
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text(
-                        arrNames[index],
-                        style: TextStyle(
-                          fontSize: 21,
-                          fontWeight: FontWeight.w500,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text(
-                  arrNames[index],
-                  style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
-                ),
-              ),
-            ],
-          );
-        },
-        itemCount: arrNames.length,
-        separatorBuilder: (context, index) {
-          return Divider(height: 100, thickness: 1);
-        },
+            decoration: BoxDecoration(
+              color: const Color.fromARGB(255, 142, 6, 10),
+              borderRadius: BorderRadius.circular(11),
+              border: Border.all(width: 5, color: Colors.black),
+              boxShadow: [
+                BoxShadow(blurRadius: 11, spreadRadius: 7, color: Colors.white),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
