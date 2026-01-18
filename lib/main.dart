@@ -102,24 +102,52 @@ class MyApp extends StatelessWidget {
         //     ),
         //   ),
         // ),
-        body: Center(
-          child: CircleAvatar(
-            child: Container(
-              width: 50,
-              height: 50,
-              child: Column(
-                children: [
-                  Container(
-                    width: 50,
-                    height: 50,
-                    child: Image.asset('assets/images/OIP (1).jfif'),
-                  ),
-                ],
+        // body: Center(
+        //   child: CircleAvatar(
+        //     child: Container(
+        //       width: 50,
+        //       height: 50,
+        //       child: Column(
+        //         children: [
+        //           Container(
+        //             width: 50,
+        //             height: 50,
+        //             child: Image.asset('assets/images/OIP (1).jfif'),
+        //           ),
+        //         ],
+        //       ),
+        //     ),
+        //     backgroundColor: Colors.green,
+        //     maxRadius: 50,
+        //   ),
+        // ),
+        body: Column(
+          children: [
+            Text(
+              "Hello World",
+              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "Hello World",
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.italic,
               ),
             ),
-            backgroundColor: Colors.green,
-            maxRadius: 50,
-          ),
+            Text(
+              "Hello World",
+              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+            ),
+            Text(
+              "Hello World",
+              style: TextStyle(
+                fontSize: 11,
+                fontWeight: FontWeight.w500,
+                fontStyle: FontStyle.italic,
+              ),
+            ),
+          ],
         ),
       ),
     );
