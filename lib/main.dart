@@ -5,9 +5,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
+  var uEmailText = TextEditingController();
+  var passText = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    var arrNames = ["Sita", "Hari", "Ram", "Saloni", "Gita"];
+    // var arrNames = ["Sita", "Hari", "Ram", "Saloni", "Gita"];
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -121,33 +123,95 @@ class MyApp extends StatelessWidget {
         //     maxRadius: 50,
         //   ),
         // ),
-        body: Column(
-          children: [
-            Text(
-              "Hello World",
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+        // body: Column(
+        //   children: [
+        //     Text(
+        //       "Hello World",
+        //       style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+        //     ),
+        //     Text(
+        //       "Hello World",
+        //       style: TextStyle(
+        //         fontSize: 11,
+        //         fontWeight: FontWeight.w500,
+        //         fontStyle: FontStyle.italic,
+        //       ),
+        //     ),
+        //     Text(
+        //       "Hello World",
+        //       style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
+        //     ),
+        //     Text(
+        //       "Hello World",
+        //       style: TextStyle(
+        //         fontSize: 11,
+        //         fontWeight: FontWeight.w500,
+        //         fontStyle: FontStyle.italic,
+        //       ),
+        //     ),
+        //   ],
+        // ),
+        // body: Center(
+        //   child: Card(
+        //     elevation: 15,
+        //     shadowColor: Colors.red,
+        //     child: Padding(
+        //       padding: const EdgeInsets.all(8.0),
+        //       child: Text("Hello World", style: TextStyle(fontSize: 25)),
+        //     ),
+        //   ),
+        // ),
+        body: Center(
+          child: Container(
+            width: 300,
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextField(
+                  controller: uEmailText,
+                  decoration: InputDecoration(
+                    hintText: "Enter Email here.....",
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: BorderSide(color: Colors.red, width: 2),
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                      borderSide: BorderSide(
+                        color: Colors.blueAccent,
+                        width: 2,
+                      ),
+                    ),
+
+                    suffixIcon: IconButton(
+                      icon: Icon(Icons.remove_red_eye),
+                      onPressed: () {},
+                    ),
+                  ),
+                ),
+
+                Container(height: 11),
+                TextField(
+                  controller: passText,
+                  obscureText: true,
+                  decoration: InputDecoration(
+                    hintText: "Enter Password here....",
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(11),
+                    ),
+                  ),
+                ),
+                ElevatedButton(
+                  onPressed: () {
+                    String uEmail = uEmailText.text.toString();
+                    String upass = passText.text;
+                    print("Email:$uEmail,Pass:$upass");
+                  },
+                  child: Text("Login"),
+                ),
+              ],
             ),
-            Text(
-              "Hello World",
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w500,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-            Text(
-              "Hello World",
-              style: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
-            ),
-            Text(
-              "Hello World",
-              style: TextStyle(
-                fontSize: 11,
-                fontWeight: FontWeight.w500,
-                fontStyle: FontStyle.italic,
-              ),
-            ),
-          ],
+          ),
         ),
       ),
     );
