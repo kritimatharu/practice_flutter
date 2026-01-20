@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,11 +6,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  var uEmailText = TextEditingController();
-  var passText = TextEditingController();
+  // var uEmailText = TextEditingController();
+  // var passText = TextEditingController();
   @override
   Widget build(BuildContext context) {
     // var arrNames = ["Sita", "Hari", "Ram", "Saloni", "Gita"];
+    var time = DateTime.now();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -161,54 +163,70 @@ class MyApp extends StatelessWidget {
         //     ),
         //   ),
         // ),
+        // body: Center(
+        //   child: Container(
+        //     width: 300,
+        //     child: Column(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       children: [
+        //         TextField(
+        //           controller: uEmailText,
+        //           decoration: InputDecoration(
+        //             hintText: "Enter Email here.....",
+        //             focusedBorder: OutlineInputBorder(
+        //               borderRadius: BorderRadius.circular(11),
+        //               borderSide: BorderSide(color: Colors.red, width: 2),
+        //             ),
+        //             enabledBorder: OutlineInputBorder(
+        //               borderRadius: BorderRadius.circular(11),
+        //               borderSide: BorderSide(
+        //                 color: Colors.blueAccent,
+        //                 width: 2,
+        //               ),
+        //             ),
+
+        //             suffixIcon: IconButton(
+        //               icon: Icon(Icons.remove_red_eye),
+        //               onPressed: () {},
+        //             ),
+        //           ),
+        //         ),
+
+        //         Container(height: 11),
+        //         TextField(
+        //           controller: passText,
+        //           obscureText: true,
+        //           decoration: InputDecoration(
+        //             hintText: "Enter Password here....",
+        //             border: OutlineInputBorder(
+        //               borderRadius: BorderRadius.circular(11),
+        //             ),
+        //           ),
+        //         ),
+        //         ElevatedButton(
+        //           onPressed: () {
+        //             String uEmail = uEmailText.text.toString();
+        //             String upass = passText.text;
+        //             print("Email:$uEmail,Pass:$upass");
+        //           },
+        //           child: Text("Login"),
+        //         ),
+        //       ],
+        //     ),
+        //   ),
+        // ),
         body: Center(
           child: Container(
-            width: 300,
+            width: 200,
+            height: 200,
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextField(
-                  controller: uEmailText,
-                  decoration: InputDecoration(
-                    hintText: "Enter Email here.....",
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11),
-                      borderSide: BorderSide(color: Colors.red, width: 2),
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11),
-                      borderSide: BorderSide(
-                        color: Colors.blueAccent,
-                        width: 2,
-                      ),
-                    ),
-
-                    suffixIcon: IconButton(
-                      icon: Icon(Icons.remove_red_eye),
-                      onPressed: () {},
-                    ),
-                  ),
+                Text(
+                  'Current Time: ${time.hour}, ${time.month},${time.year}',
+                  style: TextStyle(fontSize: 25),
                 ),
-
-                Container(height: 11),
-                TextField(
-                  controller: passText,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: "Enter Password here....",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(11),
-                    ),
-                  ),
-                ),
-                ElevatedButton(
-                  onPressed: () {
-                    String uEmail = uEmailText.text.toString();
-                    String upass = passText.text;
-                    print("Email:$uEmail,Pass:$upass");
-                  },
-                  child: Text("Login"),
-                ),
+                ElevatedButton(onPressed: () {}, child: Text('Current Time')),
               ],
             ),
           ),
