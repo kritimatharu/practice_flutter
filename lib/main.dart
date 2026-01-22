@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // var arrNames = ["Sita", "Hari", "Ram", "Saloni", "Gita"];
-    var time = DateTime.now();
+    // var time = DateTime.now();
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
@@ -215,21 +215,38 @@ class MyApp extends StatelessWidget {
         //     ),
         //   ),
         // ),
-        body: Center(
-          child: Container(
-            width: 200,
-            height: 200,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Current Time: ${time.hour}, ${time.month},${time.year}',
-                  style: TextStyle(fontSize: 25),
-                ),
-                ElevatedButton(onPressed: () {}, child: Text('Current Time')),
-              ],
-            ),
-          ),
+        // body: Center(
+        //   child: Container(
+        //     width: 200,
+        //     height: 200,
+        //     child: Column(
+        //       mainAxisAlignment: MainAxisAlignment.center,
+        //       children: [
+        //         Text(
+        //           'Current Time: ${time.hour}, ${time.month},${time.year}',
+        //           style: TextStyle(fontSize: 25),
+        //         ),
+        //         ElevatedButton(onPressed: () {}, child: Text('Current Time')),
+        //       ],
+        //     ),
+        //   ),
+        // ),
+        body: GridView.count(
+          crossAxisCount: 4,
+          crossAxisSpacing: 11,
+          mainAxisSpacing: 11,
+          children: [
+            Container(color: Colors.red),
+
+            Container(color: Colors.amber),
+            Container(color: Colors.blue),
+
+            Container(color: Colors.orange),
+
+            Container(color: Colors.pink),
+
+            Container(color: Colors.purple),
+          ],
         ),
       ),
     );
